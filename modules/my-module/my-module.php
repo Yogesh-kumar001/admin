@@ -52,5 +52,20 @@ class My_Module extends Module
         $router = SymfonyContainer::getInstance()->get('router');
         return $router->generate('your_route_name');
     }
+
+    /**
+     * Demonstrates generating a Symfony route using the Link helper.
+     *
+     * @param string $route Symfony route name
+     * @param array $params Route parameters
+     *
+     * @return string
+     */
+    public function generateAdminRoute(string $route, array $params = [])
+    {
+        $link = new \Link();
+
+        return $link->getAdminLink('AdminModules', true, array_merge(['route' => $route], $params));
+    }
 }
 
