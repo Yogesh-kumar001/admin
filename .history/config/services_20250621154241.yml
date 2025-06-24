@@ -1,0 +1,7 @@
+# modules/your-module/config/services.yml
+
+services:
+  MyModule\Controller\DemoController:
+    class: MyModule\Controller\DemoController
+    arguments:
+      - '@doctrine.cache.provider'

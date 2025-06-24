@@ -1,0 +1,10 @@
+{
+  "name": "you/awvisualmerchandising",
+  "description": "AW Visual Merchandising",
+  "autoload": {
+    "psr-4": {
+      "Awvisualmerchandising\\Controller\\": "src/Controller/"
+    }
+  },
+  "type": "prestashop-module"
+}

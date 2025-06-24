@@ -1,0 +1,5 @@
+awvisualmerchandising_admin_index:
+  path: awvisualmerchandising/index
+  methods: [GET]
+  defaults:
+    _controller: 'Awvisualmerchandising\Controller\AdminMerchandisingController::indexAction'

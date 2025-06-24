@@ -1,0 +1,7 @@
+# modules/awvisualmerchandising/config/services.yml
+
+services:
+  Awvisualmerchandising\Controller\AdminMerchandisingController:
+    class: Awvisualmerchandising\Controller\AdminMerchandisingController
+    arguments:
+      - '@doctrine.cache.provider'

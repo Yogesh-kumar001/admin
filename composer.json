@@ -1,0 +1,12 @@
+// modules/awvisualmerchandising/composer.json
+
+{
+  "name": "aw/awvisualmerchandising",
+  "description": "PrestaShop Visual Merchandising module",
+  "autoload": {
+    "psr-4": {
+      "AwVisualMerchandising\\": "src/"
+    }
+  },
+  "type": "prestashop-module"
+}
