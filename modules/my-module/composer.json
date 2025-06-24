@@ -1,0 +1,13 @@
+{
+  "name": "you/my-module",
+  "description": "Example PrestaShop module with admin controller",
+  "autoload": {
+    "psr-4": {
+      "MyModule\\Controller\\": "src/Controller/"
+    }
+  },
+  "config": {
+    "prepend-autoloader": false
+  },
+  "type": "prestashop-module"
+}
