@@ -61,7 +61,7 @@ public $tabs = [
 
         $this->ps_versions_compliancy = ['min' => '8.0.0', 'max' => _PS_VERSION_];
     }
-}
+
 public function install()
 {
     include dirname(__FILE__) . '/sql/install.php';
