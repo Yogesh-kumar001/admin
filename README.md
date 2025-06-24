@@ -30,3 +30,30 @@ public function generateAdminRoute(string $route, array $params = [])
 }
 ```
 
+## Adding Module Links to the Back Office
+
+To display a menu item in the PrestaShop Back Office, define the `$tabs` property
+in your main module class. Each entry describes the tab class name, label, and
+its parent location in the menu hierarchy. The example module already registers
+one tab linking to the modern controller:
+
+```php
+class My_Module extends Module
+{
+    public $tabs = [
+        [
+            'route_name' => 'your_route_name',
+            'class_name' => 'AdminMyModuleDemo',
+            'visible' => true,
+            'name' => [
+                'en' => 'Demo',
+            ],
+            'parent_class_name' => 'AdminParentModulesSf',
+        ],
+    ];
+}
+```
+
+When the module is installed, PrestaShop automatically reads this array and
+creates the corresponding menu entry under **Modules > Module Manager**.
+
