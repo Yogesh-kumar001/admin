@@ -4,9 +4,15 @@ if (!defined('_PS_VERSION_')) {
 }
 
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
+use Language;
 
 class My_Module extends Module
 {
+    /**
+     * @var array
+     */
+    public $tabs = [];
+
     public function __construct()
     {
         $this->name = 'my-module';
@@ -18,6 +24,22 @@ class My_Module extends Module
 
         $this->displayName = $this->l('My Module');
         $this->description = $this->l('Example module demonstrating an admin controller.');
+
+        $tabNames = [];
+        foreach (Language::getLanguages(true) as $lang) {
+            $tabNames[$lang['locale']] = $this->trans('Demo', [], 'Modules.MyModule.Admin', $lang['locale']);
+        }
+        $this->tabs = [
+            [
+                'route_name' => 'your_route_name',
+                'class_name' => 'AdminMyModuleDemo',
+                'visible' => true,
+                'name' => $tabNames,
+                'parent_class_name' => 'AdminParentModulesSf',
+                'wording' => 'Demo',
+                'wording_domain' => 'Modules.MyModule.Admin',
+            ],
+        ];
     }
 
     public function install()

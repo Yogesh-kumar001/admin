@@ -3,3 +3,4 @@ your_route_name:
   methods: [GET]
   defaults:
     _controller: 'MyModule\\Controller\\DemoController::demoAction'
+    _legacy_controller: AdminMyModuleDemo
